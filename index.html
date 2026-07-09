@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Café Aroma & Co. | Tu Momento Delicioso</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- Font Awesome para Iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -23,34 +20,31 @@
 </head>
 <body class="bg-[#faf7f2] text-[#3e2723]">
 
-    <!-- Navbar -->
     <nav class="fixed w-full bg-[#faf7f2]/90 backdrop-blur-md z-50 shadow-sm">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="font-serif text-2xl font-bold tracking-wide text-[#5c3a21]">Aroma & Co.</a>
             <div class="hidden md:flex space-x-8 font-medium">
                 <a href="#inicio" class="hover:text-[#a0522d] transition-colors">Inicio</a>
                 <a href="#sobre-nosotros" class="hover:text-[#a0522d] transition-colors">Nosotros</a>
-                <a href="#menu" class="hover:text-[#a0522d] transition-colors">Menú</a>
+                <a href="menu.html" class="hover:text-[#a0522d] transition-colors">Menú</a>
                 <a href="#contacto" class="hover:text-[#a0522d] transition-colors">Contacto</a>
             </div>
-            <a href="#menu" class="bg-[#5c3a21] text-white px-5 py-2 rounded-full hover:bg-[#a0522d] transition-all text-sm font-semibold">Pedir Ahora</a>
+            <a href="menu.html" class="bg-[#5c3a21] text-white px-5 py-2 rounded-full hover:bg-[#a0522d] transition-all text-sm font-semibold">Pedir Ahora</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="inicio" class="min-h-screen flex items-center justify-center pt-20 bg-cover bg-center relative" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=1920');">
         <div class="max-w-4xl mx-auto text-center text-white px-6">
             <span class="text-[#d2b48c] tracking-widest uppercase font-semibold text-sm block mb-3">Granos seleccionados a mano</span>
             <h1 class="font-serif text-5xl md:text-7xl font-bold mb-6 leading-tight">El café perfecto para empezar tu día</h1>
             <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl mx-auto font-light">Un espacio acogedor donde cada taza cuenta una historia de pasión, aroma y el tostado perfecto.</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#menu" class="bg-[#d2b48c] text-[#3e2723] px-8 py-3 rounded-full font-bold text-lg hover:bg-white hover:scale-105 transition-all">Ver Menú</a>
+                <a href="menu.html" class="bg-[#d2b48c] text-[#3e2723] px-8 py-3 rounded-full font-bold text-lg hover:bg-white hover:scale-105 transition-all">Ver Menú</a>
                 <a href="#contacto" class="border-2 border-white text-white px-8 py-3 rounded-full font-bold text-lg hover:bg-white hover:text-[#3e2723] transition-all">Reservar Mesa</a>
             </div>
         </div>
     </section>
 
-    <!-- Características / Valores -->
     <section class="py-20 max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
         <div class="bg-white p-8 rounded-2xl shadow-sm text-center border border-amber-100">
             <div class="w-16 h-16 bg-[#faf7f2] rounded-full flex items-center justify-center mx-auto mb-6 text-2xl text-[#a0522d]">
@@ -75,7 +69,6 @@
         </div>
     </section>
 
-    <!-- Sobre Nosotros -->
     <section id="sobre-nosotros" class="py-20 bg-white">
         <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div class="relative">
@@ -95,14 +88,13 @@
         </div>
     </section>
 
-    <!-- Menú Destacado -->
-    <section id="menu" class="py-20 max-w-6xl mx-auto px-6">
+    <section class="py-20 max-w-6xl mx-auto px-6">
         <div class="text-center mb-16">
             <span class="text-[#a0522d] tracking-widest uppercase font-semibold text-sm block mb-2">Favoritos de la casa</span>
-            <h2 class="font-serif text-4xl font-bold">Nuestro Menú de Especialidad</h2>
+            <h2 class="font-serif text-4xl font-bold mb-4">Nuestro Menú de Especialidad</h2>
+            <a href="menu.html" class="text-[#a0522d] font-semibold hover:underline text-sm">Ver todo el menú completo <i class="fa-solid fa-arrow-right ml-1"></i></a>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Item 1 -->
             <div class="bg-white p-4 rounded-2xl flex gap-4 items-center shadow-xs border border-amber-50">
                 <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=200" alt="Espresso" class="w-24 h-24 rounded-xl object-cover">
                 <div class="flex-1">
@@ -113,7 +105,6 @@
                     <p class="text-gray-500 text-sm">Extracción intensa con notas de chocolate amargo y avellana.</p>
                 </div>
             </div>
-            <!-- Item 2 -->
             <div class="bg-white p-4 rounded-2xl flex gap-4 items-center shadow-xs border border-amber-50">
                 <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=200" alt="Capuccino" class="w-24 h-24 rounded-xl object-cover">
                 <div class="flex-1">
@@ -124,7 +115,6 @@
                     <p class="text-gray-500 text-sm">Espresso suave combinado con leche cremosa al vapor y arte.</p>
                 </div>
             </div>
-            <!-- Item 3 -->
             <div class="bg-white p-4 rounded-2xl flex gap-4 items-center shadow-xs border border-amber-50">
                 <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=200" alt="Cold Brew" class="w-24 h-24 rounded-xl object-cover">
                 <div class="flex-1">
@@ -135,7 +125,6 @@
                     <p class="text-gray-500 text-sm">Café extraído en frío por 18 horas, con un toque de vainilla dulce.</p>
                 </div>
             </div>
-            <!-- Item 4 -->
             <div class="bg-white p-4 rounded-2xl flex gap-4 items-center shadow-xs border border-amber-50">
                 <img src="https://images.unsplash.com/photo-1608686207856-001b95cf60ca?q=80&w=200" alt="Croissant" class="w-24 h-24 rounded-xl object-cover">
                 <div class="flex-1">
@@ -149,7 +138,6 @@
         </div>
     </section>
 
-    <!-- Horarios y Ubicación / Contacto -->
     <section id="contacto" class="py-20 bg-[#5c3a21] text-white">
         <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
@@ -183,7 +171,6 @@
                 </div>
             </div>
 
-            <!-- Formulario Simple -->
             <div class="bg-white p-8 rounded-3xl text-[#3e2723] shadow-xl">
                 <h3 class="font-serif text-2xl font-bold mb-6">Envíanos un mensaje o reserva</h3>
                 <form class="space-y-4" onsubmit="event.preventDefault(); alert('¡Gracias por escribirnos! Te contactaremos pronto.');">
@@ -205,7 +192,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-[#2b1810] text-gray-400 py-8 border-t border-amber-950">
         <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
             <p class="text-sm">&copy; 2026 Café Aroma & Co. Todos los derechos reservados.</p>
