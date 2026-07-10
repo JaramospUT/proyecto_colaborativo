@@ -1,160 +1,183 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Café Aroma & Co. | Tu Momento Delicioso</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Font Awesome para Iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
         }
+
         .font-serif {
             font-family: 'Playfair Display', serif;
         }
     </style>
 </head>
+
 <body class="bg-[#faf7f2] text-[#3e2723]">
 
+    <!-- Navbar -->
     <nav class="fixed w-full bg-[#faf7f2]/90 backdrop-blur-md z-50 shadow-sm">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="font-serif text-2xl font-bold tracking-wide text-[#5c3a21]">Aroma & Co.</a>
             <div class="hidden md:flex space-x-8 font-medium">
                 <a href="#inicio" class="hover:text-[#a0522d] transition-colors">Inicio</a>
                 <a href="#sobre-nosotros" class="hover:text-[#a0522d] transition-colors">Nosotros</a>
-                <a href="menu.html" class="hover:text-[#a0522d] transition-colors">Menú</a>
+                <a href="#menu" class="hover:text-[#a0522d] transition-colors">Menú</a>
                 <a href="#contacto" class="hover:text-[#a0522d] transition-colors">Contacto</a>
             </div>
-            <a href="menu.html" class="bg-[#5c3a21] text-white px-5 py-2 rounded-full hover:bg-[#a0522d] transition-all text-sm font-semibold">Pedir Ahora</a>
+            <a href="#menu"
+                class="bg-[#5c3a21] text-white px-5 py-2 rounded-full hover:bg-[#a0522d] transition-all text-sm font-semibold">Pedir
+                Ahora</a>
         </div>
     </nav>
 
-    <section id="inicio" class="min-h-screen flex items-center justify-center pt-20 bg-cover bg-center relative" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=1920');">
+    <!-- Hero Section -->
+    <section id="inicio" class="min-h-screen flex items-center justify-center pt-20 bg-cover bg-center relative"
+        style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=1920');">
         <div class="max-w-4xl mx-auto text-center text-white px-6">
-            <span class="text-[#d2b48c] tracking-widest uppercase font-semibold text-sm block mb-3">Granos seleccionados a mano</span>
-            <h1 class="font-serif text-5xl md:text-7xl font-bold mb-6 leading-tight">El café perfecto para empezar tu día</h1>
-            <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl mx-auto font-light">Un espacio acogedor donde cada taza cuenta una historia de pasión, aroma y el tostado perfecto.</p>
+            <span class="text-[#d2b48c] tracking-widest uppercase font-semibold text-sm block mb-3">Granos seleccionados
+                a mano</span>
+            <h1 class="font-serif text-5xl md:text-7xl font-bold mb-6 leading-tight">El café perfecto para empezar tu
+                día</h1>
+            <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl mx-auto font-light">Un espacio acogedor donde cada
+                taza cuenta una historia de pasión, aroma y el tostado perfecto.</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="menu.html" class="bg-[#d2b48c] text-[#3e2723] px-8 py-3 rounded-full font-bold text-lg hover:bg-white hover:scale-105 transition-all">Ver Menú</a>
-                <a href="#contacto" class="border-2 border-white text-white px-8 py-3 rounded-full font-bold text-lg hover:bg-white hover:text-[#3e2723] transition-all">Reservar Mesa</a>
+                <a href="#menu"
+                    class="bg-[#d2b48c] text-[#3e2723] px-8 py-3 rounded-full font-bold text-lg hover:bg-white hover:scale-105 transition-all">Ver
+                    Menú</a>
+                <a href="#contacto"
+                    class="border-2 border-white text-white px-8 py-3 rounded-full font-bold text-lg hover:bg-white hover:text-[#3e2723] transition-all">Reservar
+                    Mesa</a>
             </div>
         </div>
     </section>
 
+    <!-- Características / Valores -->
     <section class="py-20 max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
         <div class="bg-white p-8 rounded-2xl shadow-sm text-center border border-amber-100">
-            <div class="w-16 h-16 bg-[#faf7f2] rounded-full flex items-center justify-center mx-auto mb-6 text-2xl text-[#a0522d]">
+            <div
+                class="w-16 h-16 bg-[#faf7f2] rounded-full flex items-center justify-center mx-auto mb-6 text-2xl text-[#a0522d]">
                 <i class="fa-solid fa-seedling"></i>
             </div>
             <h3 class="font-serif text-xl font-bold mb-3">100% Orgánico</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">Trabajamos directamente con agricultores locales para traerte granos de comercio justo y cultivo sostenible.</p>
+            <p class="text-gray-600 text-sm leading-relaxed">Trabajamos directamente con agricultores locales para
+                traerte granos de comercio justo y cultivo sostenible.</p>
         </div>
         <div class="bg-white p-8 rounded-2xl shadow-sm text-center border border-amber-100">
-            <div class="w-16 h-16 bg-[#faf7f2] rounded-full flex items-center justify-center mx-auto mb-6 text-2xl text-[#a0522d]">
+            <div
+                class="w-16 h-16 bg-[#faf7f2] rounded-full flex items-center justify-center mx-auto mb-6 text-2xl text-[#a0522d]">
                 <i class="fa-solid fa-fire-smoke"></i>
             </div>
             <h3 class="font-serif text-xl font-bold mb-3">Tostado Artesanal</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">Tostamos nuestros propios granos semanalmente en lotes pequeños para garantizar la máxima frescura.</p>
+            <p class="text-gray-600 text-sm leading-relaxed">Tostamos nuestros propios granos semanalmente en lotes
+                pequeños para garantizar la máxima frescura.</p>
         </div>
         <div class="bg-white p-8 rounded-2xl shadow-sm text-center border border-amber-100">
-            <div class="w-16 h-16 bg-[#faf7f2] rounded-full flex items-center justify-center mx-auto mb-6 text-2xl text-[#a0522d]">
+            <div
+                class="w-16 h-16 bg-[#faf7f2] rounded-full flex items-center justify-center mx-auto mb-6 text-2xl text-[#a0522d]">
                 <i class="fa-solid fa-mug-hot"></i>
             </div>
             <h3 class="font-serif text-xl font-bold mb-3">Ambiente Inspirador</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">Un espacio con Wi-Fi de alta velocidad, música suave y sillones perfectos para trabajar o relajarte.</p>
+            <p class="text-gray-600 text-sm leading-relaxed">Un espacio con Wi-Fi de alta velocidad, música suave y
+                sillones perfectos para trabajar o relajarte.</p>
         </div>
     </section>
 
+    <!-- Sobre Nosotros -->
     <section id="sobre-nosotros" class="py-20 bg-white">
         <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div class="relative">
-                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800" alt="Barista preparando café" class="rounded-3xl shadow-lg w-full object-cover h-[450px]">
-                <div class="absolute -bottom-6 -right-6 bg-[#5c3a21] text-white p-6 rounded-2xl hidden sm:block max-w-[200px]">
+                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800"
+                    alt="Barista preparando café" class="rounded-3xl shadow-lg w-full object-cover h-[450px]">
+                <div
+                    class="absolute -bottom-6 -right-6 bg-[#5c3a21] text-white p-6 rounded-2xl hidden sm:block max-w-[200px]">
                     <p class="font-serif text-3xl font-bold text-[#d2b48c]">Desde 2018</p>
                     <p class="text-xs text-gray-300 mt-2">Sirviendo el mejor café de especialidad de la ciudad.</p>
                 </div>
             </div>
             <div>
-                <span class="text-[#a0522d] tracking-widest uppercase font-semibold text-sm block mb-2">Nuestra Historia</span>
+                <span class="text-[#a0522d] tracking-widest uppercase font-semibold text-sm block mb-2">Nuestra
+                    Historia</span>
                 <h2 class="font-serif text-4xl font-bold mb-6 leading-tight">Pasión en cada gota, amor en cada taza</h2>
-                <p class="text-gray-600 mb-6 leading-relaxed">Aroma & Co. nació de la idea de que tomar café no debe ser un acto rutinario, sino un ritual. Nos esforzamos por crear el balance perfecto entre un grano de excelente origen y la técnica ideal de extracción.</p>
-                <p class="text-gray-600 mb-8 leading-relaxed">Ya sea que busques un Espresso concentrado para despertar tus sentidos o un Latte cremoso acompañado de repostería recién horneada, aquí encontrarás tu refugio ideal.</p>
-                <a href="#contacto" class="inline-block bg-[#5c3a21] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#a0522d] transition-colors">Visítanos hoy</a>
+                <p class="text-gray-600 mb-6 leading-relaxed">Aroma & Co. nació de la idea de que tomar café no debe ser
+                    un acto rutinario, sino un ritual. Nos esforzamos por crear el balance perfecto entre un grano de
+                    excelente origen y la técnica ideal de extracción.</p>
+                <p class="text-gray-600 mb-8 leading-relaxed">Ya sea que busques un Espresso concentrado para despertar
+                    tus sentidos o un Latte cremoso acompañado de repostería recién horneada, aquí encontrarás tu
+                    refugio ideal.</p>
+                <a href="#contacto"
+                    class="inline-block bg-[#5c3a21] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#a0522d] transition-colors">Visítanos
+                    hoy</a>
             </div>
         </div>
     </section>
 
-    <section class="py-20 max-w-6xl mx-auto px-6">
+    <!-- Menú Destacado -->
+    <section id="menu" class="py-20 max-w-6xl mx-auto px-6">
         <div class="text-center mb-16">
-            <span class="text-[#a0522d] tracking-widest uppercase font-semibold text-sm block mb-2">Favoritos de la casa</span>
-            <h2 class="font-serif text-4xl font-bold mb-4">Nuestro Menú de Especialidad</h2>
-            <a href="menu.html" class="text-[#a0522d] font-semibold hover:underline text-sm">Ver todo el menú completo <i class="fa-solid fa-arrow-right ml-1"></i></a>
+            <span class="text-[#a0522d] tracking-widest uppercase font-semibold text-sm block mb-2">Favoritos de la
+                casa</span>
+            <h2 class="font-serif text-4xl font-bold">Nuestro Menú de Especialidad</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Item 1 -->
             <div class="bg-white p-4 rounded-2xl flex gap-4 items-center shadow-xs border border-amber-50">
-                <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=200" alt="Espresso" class="w-24 h-24 rounded-xl object-cover">
+                <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=200" alt="Espresso"
+                    class="w-24 h-24 rounded-xl object-cover">
                 <div class="flex-1">
                     <div class="flex justify-between items-baseline mb-1">
                         <h4 class="font-serif font-bold text-lg">Espresso Doble</h4>
-                        <span class="font-bold text-[#a0522d]">$50 MXN</span>
-                        <!-- Tamaños Badges -->
-                        <div class="flex gap-1.5 mb-2">
-                            <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-semibold uppercase tracking-wider">Ch</span>
-                            <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-semibold uppercase tracking-wider">Med</span>
-                            <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-semibold uppercase tracking-wider">Gde</span>
-                        </div>
+                        <span class="font-bold text-[#a0522d]">$3.50</span>
                     </div>
                     <p class="text-gray-500 text-sm">Extracción intensa con notas de chocolate amargo y avellana.</p>
                 </div>
             </div>
+            <!-- Item 2 -->
             <div class="bg-white p-4 rounded-2xl flex gap-4 items-center shadow-xs border border-amber-50">
-                <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=200" alt="Capuccino" class="w-24 h-24 rounded-xl object-cover">
+                <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=200" alt="Capuccino"
+                    class="w-24 h-24 rounded-xl object-cover">
                 <div class="flex-1">
                     <div class="flex justify-between items-baseline mb-1">
                         <h4 class="font-serif font-bold text-lg">Café Latte Art</h4>
-                        <span class="font-bold text-[#a0522d]">$80 MXN</span>
-                        <!-- Tamaños Badges -->
-                        <div class="flex gap-1.5 mb-2">
-                            <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-semibold uppercase tracking-wider">Ch</span>
-                            <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-semibold uppercase tracking-wider">Med</span>
-                            <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-semibold uppercase tracking-wider">Gde</span>
-                        </div>
+                        <span class="font-bold text-[#a0522d]">$4.50</span>
                     </div>
                     <p class="text-gray-500 text-sm">Espresso suave combinado con leche cremosa al vapor y arte.</p>
                 </div>
             </div>
+            <!-- Item 3 -->
             <div class="bg-white p-4 rounded-2xl flex gap-4 items-center shadow-xs border border-amber-50">
-                <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=200" alt="Cold Brew" class="w-24 h-24 rounded-xl object-cover">
+                <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=200" alt="Cold Brew"
+                    class="w-24 h-24 rounded-xl object-cover">
                 <div class="flex-1">
                     <div class="flex justify-between items-baseline mb-1">
                         <h4 class="font-serif font-bold text-lg">Vanilla Cold Brew</h4>
-                        <span class="font-bold text-[#a0522d]">$50 MXN</span>
-                        <!-- Tamaños Badges -->
-                        <div class="flex gap-1.5 mb-2">
-                            <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-semibold uppercase tracking-wider">Ch</span>
-                            <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-semibold uppercase tracking-wider">Med</span>
-                            <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-semibold uppercase tracking-wider">Gde</span>
-                        </div>
+                        <span class="font-bold text-[#a0522d]">$5.00</span>
                     </div>
-                    <p class="text-gray-500 text-sm">Café extraído en frío por 18 horas, con un toque de vainilla dulce.</p>
+                    <p class="text-gray-500 text-sm">Café extraído en frío por 18 horas, con un toque de vainilla dulce.
+                    </p>
                 </div>
             </div>
+            <!-- Item 4 -->
             <div class="bg-white p-4 rounded-2xl flex gap-4 items-center shadow-xs border border-amber-50">
-                <img src="https://img.magnific.com/fotos-premium/delicioso-croissant-mantequilla-panaderia-francesa-tablero-madera_124507-48464.jpg" alt="Croissant" class="w-24 h-24 rounded-xl object-cover">
+                <img src="https://images.unsplash.com/photo-1608686207856-001b95cf60ca?q=80&w=200" alt="Croissant"
+                    class="w-24 h-24 rounded-xl object-cover">
                 <div class="flex-1">
                     <div class="flex justify-between items-baseline mb-1">
                         <h4 class="font-serif font-bold text-lg">Croissant de Mantequilla</h4>
-                        <span class="font-bold text-[#a0522d]">$30 MXN</span>
-                        <!-- Tamaños Badges -->
-                        <div class="flex gap-1.5 mb-2">
-                            <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-semibold uppercase tracking-wider">Mitad</span>
-                            <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-semibold uppercase tracking-wider">Completo</span>
-                            
-                        </div>
+                        <span class="font-bold text-[#a0522d]">$3.80</span>
                     </div>
                     <p class="text-gray-500 text-sm">Hojaldre tradicional horneado cada mañana, tierno y crujiente.</p>
                 </div>
@@ -162,12 +185,14 @@
         </div>
     </section>
 
+    <!-- Horarios y Ubicación / Contacto -->
     <section id="contacto" class="py-20 bg-[#5c3a21] text-white">
         <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-                <span class="text-[#d2b48c] tracking-widest uppercase font-semibold text-sm block mb-2">Encuéntranos</span>
+                <span
+                    class="text-[#d2b48c] tracking-widest uppercase font-semibold text-sm block mb-2">Encuéntranos</span>
                 <h2 class="font-serif text-4xl font-bold mb-8">¿Planeas una visita?</h2>
-                
+
                 <div class="space-y-6">
                     <div class="flex items-start gap-4">
                         <div class="text-[#d2b48c] text-xl pt-1"><i class="fa-solid fa-location-dot"></i></div>
@@ -195,24 +220,96 @@
                 </div>
             </div>
 
+            <!-- Formulario Simple -->
+            <!-- Formulario -->
             <div class="bg-white p-8 rounded-3xl text-[#3e2723] shadow-xl">
-                <h3 class="font-serif text-2xl font-bold mb-6">Envíanos un mensaje o reserva</h3>
-                <form class="space-y-4" onsubmit="event.preventDefault(); alert('¡Gracias por escribirnos! Te contactaremos pronto.');">
+                <h3 class="font-serif text-2xl font-bold mb-6">
+                    Envíanos un mensaje o reserva
+                </h3>
+
+                <form id="contactForm" class="space-y-4">
+
+                    <!-- Nombre -->
                     <div>
-                        <label class="block text-sm font-semibold mb-1 text-gray-700">Nombre</label>
-                        <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:border-[#5c3a21] text-sm">
+                        <label for="nombre" class="block text-sm font-semibold mb-1 text-gray-700">
+                            Nombre
+                        </label>
+
+                        <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:border-[#5c3a21] text-sm">
                     </div>
+
+                    <!-- Correo -->
                     <div>
-                        <label class="block text-sm font-semibold mb-1 text-gray-700">Correo Electrónico</label>
-                        <input type="email" required class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:border-[#5c3a21] text-sm">
+                        <label for="correo" class="block text-sm font-semibold mb-1 text-gray-700">
+                            Correo Electrónico
+                        </label>
+
+                        <input type="email" id="correo" name="correo" required placeholder="correo@ejemplo.com"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:border-[#5c3a21] text-sm">
                     </div>
+
+                    <!-- Mensaje -->
                     <div>
-                        <label class="block text-sm font-semibold mb-1 text-gray-700">Mensaje</label>
-                        <textarea rows="3" required class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:border-[#5c3a21] text-sm"></textarea>
+                        <label for="mensaje" class="block text-sm font-semibold mb-1 text-gray-700">
+                            Mensaje
+                        </label>
+
+                        <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Escribe tu mensaje..."
+                            class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:border-[#5c3a21] text-sm"></textarea>
                     </div>
-                    <button type="submit" class="w-full bg-[#5c3a21] text-white py-3 rounded-xl font-bold hover:bg-[#a0522d] transition-colors mt-2">Enviar Mensaje</button>
+
+                    <!-- Botón -->
+                    <button type="submit"
+                        class="w-full bg-[#5c3a21] text-white py-3 rounded-xl font-bold hover:bg-[#a0522d] transition-colors mt-2">
+
+                        Enviar Mensaje
+
+                    </button>
+
                 </form>
             </div>
+
+            <script>
+                const formulario = document.getElementById("contactForm");
+
+                formulario.addEventListener("submit", async function (e) {
+
+                    e.preventDefault();
+
+                    const datos = {
+                        nombre: document.getElementById("nombre").value.trim(),
+                        correo: document.getElementById("correo").value.trim(),
+                        mensaje: document.getElementById("mensaje").value.trim()
+                    };
+
+                    try {
+
+                        const respuesta = await fetch("http://localhost:3000/guardar", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify(datos)
+                        });
+
+                        const resultado = await respuesta.json();
+
+                        if (resultado.success) {
+                            alert("¡Mensaje enviado correctamente!");
+
+                            formulario.reset();
+                        } else {
+                            alert("No fue posible guardar el mensaje.");
+                        }
+
+                    } catch (error) {
+                        console.error(error);
+                        alert("No se pudo conectar con el servidor.");
+                    }
+
+                });
+            </script>
         </div>
     </section>
     <section>   
@@ -222,6 +319,7 @@
     </section>
 
 
+    <!-- Footer -->
     <footer class="bg-[#2b1810] text-gray-400 py-8 border-t border-amber-950">
         <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
             <p class="text-sm">&copy; 2026 Café Aroma & Co. Todos los derechos reservados.</p>
@@ -234,4 +332,5 @@
     </footer>
 
 </body>
+
 </html>
