@@ -16,22 +16,37 @@
         .font-serif {
             font-family: 'Playfair Display', serif;
         }
-        /* Bloqueo del scroll mientras la pantalla de carga está activa */
-        body.loading-active {
-            overflow: hidden;
+
+        /* Animación optimizada para completarse a los 3 segundos */
+        @keyframes fillCoffee {
+            0% { height: 0%; }
+            100% { height: 100%; }
+        }
+        .animate-coffee-fill {
+            animation: fillCoffee 3s linear forwards;
         }
     </style>
 </head>
-<body class="bg-[#faf7f2] text-[#3e2723] loading-active">
+<body class="bg-[#faf7f2] text-[#3e2723] overflow-hidden" id="body-content">
 
-    <div id="page-mask" class="fixed inset-0 bg-[#faf7f2] z-[9999] flex flex-col justify-center items-center transition-opacity duration-500 ease-out">
-        <div class="relative w-16 h-16">
-            <div class="absolute inset-0 border-4 border-amber-100 rounded-full"></div>
-            <div class="absolute inset-0 border-4 border-t-[#5c3a21] rounded-full animate-spin"></div>
+    <!-- MÁSCARA DE CARGA GLOBAL (IDÉNTICA A MENU.HTML) -->
+    <div id="loading-screen" class="fixed inset-0 bg-[#2b1810] z-[9999] flex flex-col justify-center items-center" style="transition: opacity 0.5s ease-out; opacity: 1;">
+        <div class="flex flex-col items-center">
+            
+            <!-- Contenedor del icono de la taza llenándose -->
+            <div class="relative text-7xl mb-6 w-[1.25em] h-[1em] flex items-end justify-center">
+                <i class="fa-solid fa-mug-hot text-amber-100/20 absolute inset-0"></i>
+                
+                <div class="absolute bottom-0 left-0 right-0 overflow-hidden animate-coffee-fill h-0">
+                    <i class="fa-solid fa-mug-hot text-amber-500 absolute bottom-0 left-0"></i>
+                </div>
+            </div>
+
+            <p class="font-serif text-white text-xl tracking-wide animate-pulse">Moliendo granos...</p>
         </div>
-        <p class="font-serif text-xl font-bold mt-4 text-[#5c3a21] tracking-wide animate-pulse">Preparando tu café...</p>
     </div>
 
+    <!-- NAVEGACIÓN -->
     <nav class="fixed w-full bg-[#faf7f2]/90 backdrop-blur-md z-50 shadow-sm">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="font-serif text-2xl font-bold tracking-wide text-[#5c3a21]">Aroma & Co.</a>
@@ -45,6 +60,7 @@
         </div>
     </nav>
 
+    <!-- HERO SECTION -->
     <section id="inicio" class="min-h-screen flex items-center justify-center pt-20 bg-cover bg-center relative" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=1920');">
         <div class="max-w-4xl mx-auto text-center text-white px-6">
             <span class="text-[#d2b48c] tracking-widest uppercase font-semibold text-sm block mb-3">Granos seleccionados a mano</span>
@@ -57,6 +73,9 @@
         </div>
     </section>
 
+    
+
+    <!-- CARACTERÍSTICAS -->
     <section class="py-20 max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
         <div class="bg-white p-8 rounded-2xl shadow-sm text-center border border-amber-100">
             <div class="w-16 h-16 bg-[#faf7f2] rounded-full flex items-center justify-center mx-auto mb-6 text-2xl text-[#a0522d]">
@@ -81,6 +100,81 @@
         </div>
     </section>
 
+    <section class="py-20 max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <span class="text-[#a0522d] tracking-widest uppercase font-semibold text-sm block mb-2">Favoritos de la casa</span>
+            <h2 class="font-serif text-4xl font-bold mb-4">Nuestro Menú de Especialidad</h2>
+            <a href="menu.html" class="text-[#a0522d] font-semibold hover:underline text-sm">Ver todo el menú completo <i class="fa-solid fa-arrow-right ml-1"></i></a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white p-4 rounded-2xl flex gap-4 items-center shadow-xs border border-amber-50">
+                <img src="https://s3.amazonaws.com/images.ecwid.com/images/26124018/1371212048.jpg" alt="Espresso" class="w-24 h-24 rounded-xl object-cover">
+                <div class="flex-1">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 class="font-serif font-bold text-lg">Espresso y Expresso Doble</h4>
+                        <span class="font-bold text-[#a0522d]">$50 MXN/$60 MXN</span>
+                        <!-- Tamaños Badges -->
+                        <div class="flex gap-1.5 mb-2">
+                            <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-semibold uppercase tracking-wider">Ch</span>
+                                <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-semibold uppercase tracking-wider">Med</span>
+                                <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-semibold uppercase tracking-wider">Gde</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-sm">Extracción intensa con notas de chocolate amargo y avellana.</p>
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded-2xl flex gap-4 items-center shadow-xs border border-amber-50">
+                <img src="https://images.squarespace-cdn.com/content/v1/5ebe4d17fa0cb47f52dd2601/bf63362a-b99b-466f-9d21-a648925b9ba3/latte+art.jpeg" alt="Capuccino" class="w-24 h-24 rounded-xl object-cover">
+                <div class="flex-1">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 class="font-serif font-bold text-lg">Café Latte y Latte Art</h4>
+                        <span class="font-bold text-[#a0522d]">$60 MXN Latte $80 MXN Latte Art</span>
+                        <!-- Tamaños Badges -->
+                        <div class="flex gap-1.5 mb-2">
+                            <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-semibold uppercase tracking-wider">Ch</span>
+                            <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-semibold uppercase tracking-wider">Med</span>
+                            <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-semibold uppercase tracking-wider">Gde</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-sm">Espresso suave combinado con leche cremosa al vapor y arte.</p>
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded-2xl flex gap-4 items-center shadow-xs border border-amber-50">
+                <img src="https://fedandfit.com/wp-content/uploads/2020/05/cold-brew-coffee-3.png" alt="Cold Brew" class="w-24 h-24 rounded-xl object-cover">
+                <div class="flex-1">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 class="font-serif font-bold text-lg">Cold Brew Extracción Fría</h4>
+                        <span class="font-bold text-[#a0522d]">$70 MXN</span>
+                        <!-- Tamaños Badges -->
+                        <div class="flex gap-1.5 mb-2">
+                             <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-semibold uppercase tracking-wider">Ch</span>
+                                <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-semibold uppercase tracking-wider">Med</span>
+                                <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-semibold uppercase tracking-wider">Gde</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-sm">Café extraído en frío por 18 horas, con un toque de vainilla dulce.</p>
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded-2xl flex gap-4 items-center shadow-xs border border-amber-50">
+                <img src="https://tse4.mm.bing.net/th/id/OIP.oKazLPtQ1EHLPZj5B7ZHvwHaHa?r=0&w=626&h=626&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Croissant" class="w-24 h-24 rounded-xl object-cover">
+                <div class="flex-1">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 class="font-serif font-bold text-lg">Croissant de Mantequilla</h4>
+                        <span class="font-bold text-[#a0522d]">$30 MXN / 50 MXN Completo</span>
+                        <!-- Tamaños Badges -->
+                        <div class="flex gap-1.5 mb-2">
+                                <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-semibold uppercase tracking-wider">Mitad</span>
+                                <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-semibold uppercase tracking-wider">Completo</span>
+                            
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-sm">Hojaldre tradicional crujiente por fuera y tierno por dentro, horneado cada mañana.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE NOSOTROS -->
     <section id="sobre-nosotros" class="py-20 bg-white">
         <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div class="relative">
@@ -100,129 +194,12 @@
         </div>
     </section>
 
-    <section class="py-20 max-w-6xl mx-auto px-6">
-        <div class="text-center mb-16">
-            <span class="text-[#a0522d] tracking-widest uppercase font-semibold text-sm block mb-2">Favoritos de la casa</span>
-            <h2 class="font-serif text-4xl font-bold mb-4">Nuestro Menú de Especialidad</h2>
-            <a href="menu.html" class="text-[#a0522d] font-semibold hover:underline text-sm">Ver todo el menú completo <i class="fa-solid fa-arrow-right ml-1"></i></a>
-        </div>
-
-        <div id="skeleton-menu" class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-white p-4 rounded-2xl flex gap-4 items-center border border-amber-50 animate-pulse">
-                <div class="w-24 h-24 bg-gray-200 rounded-xl"></div>
-                <div class="flex-1 space-y-3">
-                    <div class="flex justify-between items-center">
-                        <div class="h-5 bg-gray-200 rounded w-1/3"></div>
-                        <div class="h-5 bg-gray-200 rounded w-1/6"></div>
-                    </div>
-                    <div class="h-4 bg-gray-200 rounded w-full"></div>
-                    <div class="h-4 bg-gray-200 rounded w-2/3"></div>
-                </div>
-            </div>
-            <div class="bg-white p-4 rounded-2xl flex gap-4 items-center border border-amber-50 animate-pulse">
-                <div class="w-24 h-24 bg-gray-200 rounded-xl"></div>
-                <div class="flex-1 space-y-3">
-                    <div class="flex justify-between items-center">
-                        <div class="h-5 bg-gray-200 rounded w-1/2"></div>
-                        <div class="h-5 bg-gray-200 rounded w-1/6"></div>
-                    </div>
-                    <div class="h-4 bg-gray-200 rounded w-full"></div>
-                    <div class="h-4 bg-gray-200 rounded w-1/2"></div>
-                </div>
-            </div>
-            <div class="bg-white p-4 rounded-2xl flex gap-4 items-center border border-amber-50 animate-pulse">
-                <div class="w-24 h-24 bg-gray-200 rounded-xl"></div>
-                <div class="flex-1 space-y-3">
-                    <div class="flex justify-between items-center">
-                        <div class="h-5 bg-gray-200 rounded w-1/3"></div>
-                        <div class="h-5 bg-gray-200 rounded w-1/6"></div>
-                    </div>
-                    <div class="h-4 bg-gray-200 rounded w-full"></div>
-                    <div class="h-4 bg-gray-200 rounded w-3/4"></div>
-                </div>
-            </div>
-            <div class="bg-white p-4 rounded-2xl flex gap-4 items-center border border-amber-50 animate-pulse">
-                <div class="w-24 h-24 bg-gray-200 rounded-xl"></div>
-                <div class="flex-1 space-y-3">
-                    <div class="flex justify-between items-center">
-                        <div class="h-5 bg-gray-200 rounded w-1/2"></div>
-                        <div class="h-5 bg-gray-200 rounded w-1/6"></div>
-                    </div>
-                    <div class="h-4 bg-gray-200 rounded w-full"></div>
-                    <div class="h-4 bg-gray-200 rounded w-1/3"></div>
-                </div>
-            </div>
-        </div>
-
-        <div id="real-menu" class="hidden grid grid-cols-1 md:grid-cols-2 gap-8 opacity-0 transition-opacity duration-500">
-            <div class="bg-white p-4 rounded-2xl flex gap-4 items-center shadow-xs border border-amber-50">
-                <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=200" alt="Espresso" class="w-24 h-24 rounded-xl object-cover">
-                <div class="flex-1">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 class="font-serif font-bold text-lg">Espresso Doble</h4>
-                        <span class="font-bold text-[#a0522d]">$50 MXN</span>
-                    </div>
-                    <div class="flex gap-1.5 mb-2">
-                        <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-semibold uppercase tracking-wider">Ch</span>
-                        <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-semibold uppercase tracking-wider">Med</span>
-                        <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-semibold uppercase tracking-wider">Gde</span>
-                    </div>
-                    <p class="text-gray-500 text-sm">Extracción intensa con notas de chocolate amargo y avellana.</p>
-                </div>
-            </div>
-            <div class="bg-white p-4 rounded-2xl flex gap-4 items-center shadow-xs border border-amber-50">
-                <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=200" alt="Capuccino" class="w-24 h-24 rounded-xl object-cover">
-                <div class="flex-1">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 class="font-serif font-bold text-lg">Café Latte Art</h4>
-                        <span class="font-bold text-[#a0522d]">$80 MXN</span>
-                    </div>
-                    <div class="flex gap-1.5 mb-2">
-                        <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-semibold uppercase tracking-wider">Ch</span>
-                        <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-semibold uppercase tracking-wider">Med</span>
-                        <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-semibold uppercase tracking-wider">Gde</span>
-                    </div>
-                    <p class="text-gray-500 text-sm">Espresso suave combinado con leche cremosa al vapor y arte.</p>
-                </div>
-            </div>
-            <div class="bg-white p-4 rounded-2xl flex gap-4 items-center shadow-xs border border-amber-50">
-                <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=200" alt="Cold Brew" class="w-24 h-24 rounded-xl object-cover">
-                <div class="flex-1">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 class="font-serif font-bold text-lg">Vanilla Cold Brew</h4>
-                        <span class="font-bold text-[#a0522d]">$50 MXN</span>
-                    </div>
-                    <div class="flex gap-1.5 mb-2">
-                        <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-semibold uppercase tracking-wider">Ch</span>
-                        <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-semibold uppercase tracking-wider">Med</span>
-                        <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-semibold uppercase tracking-wider">Gde</span>
-                    </div>
-                    <p class="text-gray-500 text-sm">Café extraído en frío por 18 horas, con un toque de vainilla dulce.</p>
-                </div>
-            </div>
-            <div class="bg-white p-4 rounded-2xl flex gap-4 items-center shadow-xs border border-amber-50">
-                <img src="https://img.magnific.com/fotos-premium/delicioso-croissant-mantequilla-panaderia-francesa-tablero-madera_124507-48464.jpg" alt="Croissant" class="w-24 h-24 rounded-xl object-cover">
-                <div class="flex-1">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 class="font-serif font-bold text-lg">Croissant de Mantequilla</h4>
-                        <span class="font-bold text-[#a0522d]">$30 MXN</span>
-                    </div>
-                    <div class="flex gap-1.5 mb-2">
-                        <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-semibold uppercase tracking-wider">Mitad</span>
-                        <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-semibold uppercase tracking-wider">Completo</span>
-                    </div>
-                    <p class="text-gray-500 text-sm">Hojaldre tradicional horneado cada mañana, tierno y crujiente.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- CONTACTO -->
     <section id="contacto" class="py-20 bg-[#5c3a21] text-white">
         <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
                 <span class="text-[#d2b48c] tracking-widest uppercase font-semibold text-sm block mb-2">Encuéntranos</span>
                 <h2 class="font-serif text-4xl font-bold mb-8">¿Planeas una visita?</h2>
-                
                 <div class="space-y-6">
                     <div class="flex items-start gap-4">
                         <div class="text-[#d2b48c] text-xl pt-1"><i class="fa-solid fa-location-dot"></i></div>
@@ -271,6 +248,7 @@
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="bg-[#2b1810] text-gray-400 py-8 border-t border-amber-950">
         <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
             <p class="text-sm">&copy; 2026 Café Aroma & Co. Todos los derechos reservados.</p>
@@ -282,46 +260,25 @@
         </div>
     </footer>
 
+    <!-- SCRIPT DE CARGA EXACTA (3 SEGUNDOS) -->
     <script>
-        // Función dedicada a retirar la máscara de forma limpia y segura
-        function quitarMascaraGlobal() {
-            const mask = document.getElementById('page-mask');
-            if (mask) {
-                mask.classList.add('opacity-0');
-                document.body.classList.remove('loading-active');
+        setTimeout(() => {
+            const loadingScreen = document.getElementById('loading-screen');
+            const body = document.getElementById('body-content');
+
+            if (loadingScreen) {
+                // Forzamos el inicio del fadeout de la máscara
+                loadingScreen.style.opacity = '0';
                 
-                // Borramos el div por completo para optimizar el DOM
+                // Esperamos los 500ms de la transición CSS para remover la capa del DOM
                 setTimeout(() => {
-                    mask.remove();
+                    loadingScreen.style.display = 'none';
+                    
+                    // Reactivamos el scroll en el body
+                    if (body) body.classList.remove('overflow-hidden');
                 }, 500);
             }
-        }
-
-        // CONTROL 1: Quitar inmediatamente si el navegador termina la carga normal de recursos
-        window.addEventListener('load', () => {
-            quitarMascaraGlobal();
-        });
-
-        // CONTROL 2 (MÉTODO DE SEGURIDAD): Si pasa 1.5 segundos y el evento 'load' no ha respondido 
-        // debido a un retraso en las imágenes de Unsplash, forzamos la retirada para no congelar la web.
-        setTimeout(() => {
-            quitarMascaraGlobal();
-        }, 1500);
-
-        // 3. Control del Skeleton Loader (Sección favoritos del menú)
-        setTimeout(() => {
-            const skeletonMenu = document.getElementById('skeleton-menu');
-            const realMenu = document.getElementById('real-menu');
-
-            if (skeletonMenu && realMenu) {
-                skeletonMenu.style.display = 'none';
-                realMenu.classList.remove('hidden');
-                setTimeout(() => {
-                    realMenu.classList.remove('opacity-0');
-                }, 50);
-            }
-        }, 2500);
+        }, 3000); // 3000ms = 3 Segundos exactos libres de eventos externos
     </script>
-
 </body>
 </html>
