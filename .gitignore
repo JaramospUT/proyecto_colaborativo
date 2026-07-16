@@ -37,3 +37,6 @@ out/
 # Archivos del Sistema Operativo
 .DS_Store
 Thumbs.db
+
+# Mensajes de comentarios
+mensajes.json
