@@ -1,10 +1,12 @@
+require("dotenv").config();
+
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
 const nodemailer = require("nodemailer");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.json());
@@ -18,6 +20,7 @@ if (!fs.existsSync(archivo)) {
   fs.writeFileSync(archivo, "[]");
 }
 
+<<<<<<< endrik
 // Configuración de Gmail
 const transporter = nodemailer.createTransport({
   service: "gmail",
@@ -104,6 +107,29 @@ app.post("/guardar", async (req, res) => {
                     <p><b>Correo:</b> ${correo}</p>
 
                     <p><b>Mensaje:</b></p>
+=======
+//ENDPOINT GET
+app.get("/api/mensajes", (req, res) =>{
+  //se ura fs.readFile para cumplir con el requisito de lectura asincrona
+  fs.readFile(archivo, "utf8",(err, datos) =>{
+    if (err){
+      console.error("Error al leer el archivo:", err);
+      return res.status(500).json({ success: false, error:"No se pudieron leer los mensajes"});
+    }
+    try{
+      const mensajes = JSON.parse(datos);
+      res.status(200).json(mensajes);
+    } catch (parseError){
+      console.error("Errir al parsear el JSON:", parseError);
+      res.status(500).json({ success: false, error:"Formato de archivo invalido"});
+    }
+  });
+});
+
+
+app.post("/guardar", (req, res) => {
+  const { nombre, correo, mensaje } = req.body;
+>>>>>>> master
 
                     <p>${mensaje}</p>
 
@@ -130,8 +156,12 @@ app.post("/guardar", async (req, res) => {
 
 // Iniciar servidor
 app.listen(PORT, () => {
+<<<<<<< endrik
   console.log("---------------------------------------");
   console.log(`Servidor iniciado en:`);
   console.log(`http://localhost:${PORT}`);
   console.log("---------------------------------------");
+=======
+  console.log(`Servidor ejecutándose en http://localhost:3000/api/mensajes `);
+>>>>>>> master
 });
